@@ -3,6 +3,7 @@ version '0.2.0'
 
 buildscript {
     repositories {
+        mavenLocal()
         google()
         jcenter()
     }
@@ -12,26 +13,15 @@ buildscript {
     }
 }
 
-def getCurrentProjectDir() {
-    String result = ""
-    rootProject.allprojects { project ->
-        try {
-            if (project.properties.get("identityPath").toString() == ":ali_auth") {
-                result = project.properties.get("projectDir").toString()
-            }
-        }catch (e) {
-        }
-   }
-   return result
-}
-
 rootProject.allprojects {
-   def dir = getCurrentProjectDir()
     repositories {
+        mavenLocal()
         google()
         jcenter()
-        maven { // 添加这个指向本地的仓库目录
-            url "file://$dir/libs"
+
+        // 一键登录本地依赖
+        flatDir {
+            dirs project(':ali_auth').file('libs')
         }
     }
 }
