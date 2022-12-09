@@ -55,8 +55,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.alibaba:fastjson:1.2.61'
 
-    implementation "com.ali:phoneNumber-authSDK:2.12.3.4"
-    implementation "com.ali:phoneNumber-logger:2.1.3.2"
-    implementation "com.ali:phoneNumber-main:2.1.3.2"
-    implementation "com.ali:phoneNumber-crashshield:2.1.3.2"
+    implementation(name:'auth_number_product-2.12.10-log-online-standard-release', ext:'aar')
+    implementation(name:'crashshield-2.1.4-release', ext:'aar')
+    implementation(name:'main-2.1.4-release', ext:'aar')
+    implementation(name:'logger-2.1.4-release', ext:'aar')
 }
